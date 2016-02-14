@@ -15,6 +15,7 @@
 		823855011C70C25C00434125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823854FF1C70C25C00434125 /* LaunchScreen.storyboard */; };
 		8238550C1C70C25C00434125 /* LoginDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8238550B1C70C25C00434125 /* LoginDemoTests.m */; };
 		823855171C70C25C00434125 /* LoginDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 823855161C70C25C00434125 /* LoginDemoUITests.m */; };
+		823855261C70C3F800434125 /* BridgeLoop-640p.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 823855251C70C3F800434125 /* BridgeLoop-640p.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		823855121C70C25C00434125 /* LoginDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		823855161C70C25C00434125 /* LoginDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginDemoUITests.m; sourceTree = "<group>"; };
 		823855181C70C25C00434125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		823855251C70C3F800434125 /* BridgeLoop-640p.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BridgeLoop-640p.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		823854F01C70C25C00434125 /* LoginDemo */ = {
 			isa = PBXGroup;
 			children = (
+				823855241C70C3E500434125 /* Resouce */,
 				823854F41C70C25C00434125 /* AppDelegate.h */,
 				823854F51C70C25C00434125 /* AppDelegate.m */,
 				823854F71C70C25C00434125 /* ViewController.h */,
@@ -138,6 +141,14 @@
 				823855181C70C25C00434125 /* Info.plist */,
 			);
 			path = LoginDemoUITests;
+			sourceTree = "<group>";
+		};
+		823855241C70C3E500434125 /* Resouce */ = {
+			isa = PBXGroup;
+			children = (
+				823855251C70C3F800434125 /* BridgeLoop-640p.mp4 */,
+			);
+			path = Resouce;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823855261C70C3F800434125 /* BridgeLoop-640p.mp4 in Resources */,
 				823855011C70C25C00434125 /* LaunchScreen.storyboard in Resources */,
 				823854FE1C70C25C00434125 /* Assets.xcassets in Resources */,
 				823854FC1C70C25C00434125 /* Main.storyboard in Resources */,
