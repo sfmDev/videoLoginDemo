@@ -8,9 +8,18 @@
 
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "LoginView.h"
 
 @interface ViewController ()
+/**
+ *  全屏播放器
+ */
 @property (strong, nonatomic) AVPlayer *player;
+/**
+ *  登录 view
+ */
+@property (strong, nonatomic) LoginView *loginView;
+
 @end
 
 @implementation ViewController
@@ -31,6 +40,9 @@
     
     //视频播放
     [self.player play];
+    
+    _loginView = [[LoginView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:_loginView];
 }
 
 - (void)setupForAVplayerView
@@ -55,7 +67,7 @@
         [[NSNotificationCenter defaultCenter]addObserver:self
                                                 selector:@selector(__playerItemDidPlayToEndTimeNotification:)
                                                     name:AVPlayerItemDidPlayToEndTimeNotification
-                                                  object:nil];
+                                                object:nil];
         
     }
     return _player;
