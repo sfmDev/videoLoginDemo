@@ -35,13 +35,19 @@
     [self.view addSubview:maskView];
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1.5f];
-    maskView.alpha = 0.3f;
+    maskView.alpha = 0.2f;
     [UIView commitAnimations];
     
     //视频播放
     [self.player play];
     
     _loginView = [[LoginView alloc]initWithFrame:self.view.bounds];
+    _loginView.alpha = 0.f;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:2.5f];
+    _loginView.alpha = 1.0f;
+    [UIView commitAnimations];
+    
     [self.view addSubview:_loginView];
 }
 

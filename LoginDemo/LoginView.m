@@ -52,21 +52,21 @@
     [self addSubview:_topTitleLable];
     
     CGFloat btnWidth = (kWindowWidth-4*x_OffSet)/2;
-    UIButton *registBtn = [[UIButton alloc]initWithFrame:CGRectMake(x_OffSet*2, kWindowHeigth-100, btnWidth-x_OffSet/2, 44)];
-    NSLog(@"%@",NSStringFromCGRect(registBtn.frame));
-    [registBtn setTitle:@"注册" forState:0];
-    registBtn.layer.cornerRadius = 5.0f;
-    [registBtn setTitleColor:[UIColor darkGrayColor] forState:0];
-    [registBtn setBackgroundColor:[[UIColor whiteColor]colorWithAlphaComponent:0.8f]];
-    [self addSubview:registBtn];
+    _registBtn = [[UIButton alloc]initWithFrame:CGRectMake(x_OffSet*2, kWindowHeigth-100, btnWidth-x_OffSet/2, 44)];
+    NSLog(@"%@",NSStringFromCGRect(_registBtn.frame));
+    [_registBtn setTitle:@"注册" forState:0];
+    _registBtn.layer.cornerRadius = 5.0f;
+    [_registBtn setTitleColor:[UIColor darkGrayColor] forState:0];
+    [_registBtn setBackgroundColor:[[UIColor whiteColor]colorWithAlphaComponent:0.8f]];
+    [self addSubview:_registBtn];
     
-    UIButton *loginBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(registBtn.frame)+x_OffSet,kWindowHeigth-100, btnWidth-x_OffSet/2, 44)];
-    NSLog(@"%@",NSStringFromCGRect(loginBtn.frame));
-    [loginBtn setTitle:@"登录" forState:0];
-    loginBtn.layer.cornerRadius = 5.0f;
-    [loginBtn setTitleColor:[UIColor darkGrayColor] forState:0];
-    [loginBtn setBackgroundColor:[[UIColor whiteColor]colorWithAlphaComponent:0.8f]];
-    [self addSubview:loginBtn];
+    _loginBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_registBtn.frame)+x_OffSet,kWindowHeigth-100, btnWidth-x_OffSet/2, 44)];
+    NSLog(@"%@",NSStringFromCGRect(_loginBtn.frame));
+    [_loginBtn setTitle:@"登录" forState:0];
+    _loginBtn.layer.cornerRadius = 5.0f;
+    [_loginBtn setTitleColor:[UIColor darkGrayColor] forState:0];
+    [_loginBtn setBackgroundColor:[[UIColor whiteColor]colorWithAlphaComponent:0.8f]];
+    [self addSubview:_loginBtn];
 }
 
 /*

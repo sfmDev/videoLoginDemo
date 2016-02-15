@@ -22,8 +22,11 @@
  */
 @property (nonatomic,strong)UITextField *passwordTextField;
 /**
- *  button
+ *  login button
  */
 @property (nonatomic,strong) UIButton *loginBtn;
-
+/**
+ *  regist button
+ */
+@property (nonatomic,strong) UIButton *registBtn;
 @end
