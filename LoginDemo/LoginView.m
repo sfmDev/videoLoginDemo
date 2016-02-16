@@ -24,36 +24,18 @@
     return self;
 }
 
-/**
- *  顶部文字
- */
-//@property (nonatomic,strong)UILabel *topTitleLable;
-///**
-// *  账号
-// */
-//@property (nonatomic,strong)UITextField *userNameTextField;
-///**
-// *  密码
-// */
-//@property (nonatomic,strong)UITextField *passwordTextField;
-///**
-// *  button
-// */
-//@property (nonatomic,strong) UIButton *loginBtn;
-
 - (void)setLoginUI
 {
     _topTitleLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, kLabelHeight)];
     _topTitleLable.center = CGPointMake(kWindowWidth/2, kWindowHeigth/4);
     _topTitleLable.text = @"Hey,iOSer";
-    _topTitleLable.font = [UIFont systemFontOfSize:28];
+    _topTitleLable.font = [UIFont fontWithName:@"CourierNewPS-BoldItalicMT" size:28];
     _topTitleLable.textAlignment = NSTextAlignmentCenter;
     _topTitleLable.textColor = [UIColor blackColor];
     [self addSubview:_topTitleLable];
     
     CGFloat btnWidth = (kWindowWidth-4*x_OffSet)/2;
     _registBtn = [[UIButton alloc]initWithFrame:CGRectMake(x_OffSet*2, kWindowHeigth-100, btnWidth-x_OffSet/2, 44)];
-    NSLog(@"%@",NSStringFromCGRect(_registBtn.frame));
     [_registBtn setTitle:@"注册" forState:0];
     _registBtn.layer.cornerRadius = 5.0f;
     [_registBtn setTitleColor:[UIColor darkGrayColor] forState:0];
@@ -61,7 +43,6 @@
     [self addSubview:_registBtn];
     
     _loginBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_registBtn.frame)+x_OffSet,kWindowHeigth-100, btnWidth-x_OffSet/2, 44)];
-    NSLog(@"%@",NSStringFromCGRect(_loginBtn.frame));
     [_loginBtn setTitle:@"登录" forState:0];
     _loginBtn.layer.cornerRadius = 5.0f;
     [_loginBtn setTitleColor:[UIColor darkGrayColor] forState:0];
