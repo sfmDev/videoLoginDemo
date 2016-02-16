@@ -7,20 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageAndTextFieldView.h"
 
 @interface LoginView : UIView
+
+/**
+ *  账号
+ */
+@property (nonatomic,strong)ImageAndTextFieldView *userNameTextView;
+/**
+ *  密码
+ */
+@property (nonatomic,strong)ImageAndTextFieldView *passwordTextView;
 /**
  *  顶部文字
  */
 @property (nonatomic,strong)UILabel *topTitleLable;
-/**
- *  账号
- */
-@property (nonatomic,strong)UITextField *userNameTextField;
-/**
- *  密码
- */
-@property (nonatomic,strong)UITextField *passwordTextField;
 /**
  *  login button
  */
@@ -29,4 +31,8 @@
  *  regist button
  */
 @property (nonatomic,strong) UIButton *registBtn;
+/**
+ *  确定登录
+ */
+@property (nonatomic,strong)UIButton *makesureRegistBtn;
 @end

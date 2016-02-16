@@ -37,17 +37,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
     [self setupForAVplayerView];
     
-    //遮罩
-    UIView *maskView = [[UIView alloc]initWithFrame:self.view.bounds];
-    maskView.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:maskView];
+    //毛玻璃
+    UIVisualEffect *blurEffect;
+    blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIVisualEffectView *visualEffectView;
+    visualEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1.5f];
-    maskView.alpha = 0.2f;
+    [visualEffectView setAlpha:0.4f];
     [UIView commitAnimations];
+    [visualEffectView setFrame:self.view.bounds];
+    [self.view addSubview:visualEffectView];
     
     _loginView = [[LoginView alloc]initWithFrame:self.view.bounds];
     _loginView.alpha = 0.f;
@@ -56,6 +59,87 @@
     _loginView.alpha = 1.0f;
     [UIView commitAnimations];
     [self.view addSubview:_loginView];
+    
+    //注册
+    [_loginView.registBtn addTarget:self action:@selector(registUser) forControlEvents:UIControlEventTouchUpInside];
+    //登录
+    [_loginView.loginBtn addTarget:self action:@selector(loginUser) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self setTextFieldTransform];
+}
+
+/**
+ *  设置登陆框 transform
+ */
+- (void)setTextFieldTransform
+{
+    _loginView.userNameTextView.transform = CGAffineTransformMakeTranslation(-400, 0);
+    _loginView.passwordTextView.transform = CGAffineTransformMakeTranslation(-400, 0);
+    _loginView.makesureRegistBtn.transform = CGAffineTransformMakeTranslation(-400, 0);
+}
+
+/**
+ *  注册 登录两个消失
+ */
+- (void)dismissFirstLoginView
+{
+    //原来页面的消失
+    [UIView beginAnimations:nil context:nil];
+    //    _loginView.transform = CGAffineTransformMakeTranslation(0, -100);
+    [UIView setAnimationDuration:1.0f];
+    _loginView.registBtn.alpha = 0.001f;
+    _loginView.loginBtn.alpha = 0.001f;
+    [UIView commitAnimations];
+}
+
+/**
+ *  注册按钮方法
+ */
+- (void)registUser
+{
+    [self dismissFirstLoginView];
+    
+    //注册出现
+    [UIView animateWithDuration:1.0 animations:^{
+        _loginView.userNameTextView.transform = CGAffineTransformIdentity;
+        _loginView.passwordTextView.transform = CGAffineTransformIdentity;
+        _loginView.makesureRegistBtn.transform = CGAffineTransformIdentity;
+    }];
+    
+    /**
+     *  提交注册信息
+     */
+    [_loginView.makesureRegistBtn addTarget:self action:@selector(goToRegistUser) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)goToRegistUser
+{
+    [self.view endEditing:YES];
+    NSLog(@"%@",_loginView.userNameTextView.inputTextField.text);
+    NSLog(@"%@",_loginView.passwordTextView.inputTextField.text);
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+    
+    [UIView animateWithDuration:1.5f animations:^{
+        [self setTextFieldTransform];
+    }];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1.0f];
+    _loginView.registBtn.alpha = 1;
+    _loginView.loginBtn.alpha = 1;
+    [UIView commitAnimations];
+}
+
+/**
+ *  登录按钮方法
+ */
+- (void)loginUser
+{
+    [self dismissFirstLoginView];
 }
 
 - (void)setupForAVplayerView

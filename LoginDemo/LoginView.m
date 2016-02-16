@@ -29,7 +29,7 @@
     _topTitleLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, kLabelHeight)];
     _topTitleLable.center = CGPointMake(kWindowWidth/2, kWindowHeigth/4);
     _topTitleLable.text = @"Hey,iOSer";
-    _topTitleLable.font = [UIFont fontWithName:@"CourierNewPS-BoldItalicMT" size:28];
+    _topTitleLable.font = [UIFont fontWithName:@"Helvetica-Oblique" size:28];
     _topTitleLable.textAlignment = NSTextAlignmentCenter;
     _topTitleLable.textColor = [UIColor blackColor];
     [self addSubview:_topTitleLable];
@@ -48,6 +48,26 @@
     [_loginBtn setTitleColor:[UIColor darkGrayColor] forState:0];
     [_loginBtn setBackgroundColor:[[UIColor whiteColor]colorWithAlphaComponent:0.8f]];
     [self addSubview:_loginBtn];
+    
+    _userNameTextView = [[ImageAndTextFieldView alloc]initWithFrame:CGRectMake(x_OffSet, kWindowWidth*2/3, kWindowWidth-x_OffSet*2, 47)];
+    _userNameTextView.placeholdString = @"请输入手机号或者邮箱";
+    _userNameTextView.image = [UIImage imageNamed:@"icon_phone_select@2x"];
+    [self addSubview:_userNameTextView];
+    
+    _passwordTextView = [[ImageAndTextFieldView alloc]initWithFrame:CGRectMake(x_OffSet, CGRectGetMaxY(_userNameTextView.frame)+5, kWindowWidth-x_OffSet*2, 47)];
+    _passwordTextView.placeholdString = @"请输入密码";
+    _passwordTextView.inputTextField.secureTextEntry = YES;
+    _passwordTextView.image = [UIImage imageNamed:@"icon_code_select@2x"];
+    [self addSubview:_passwordTextView];
+    
+    _makesureRegistBtn = [[UIButton alloc]initWithFrame:CGRectMake(x_OffSet, CGRectGetMaxY(_passwordTextView.frame)+x_OffSet, kWindowWidth-x_OffSet*2, 44)];
+    [_makesureRegistBtn setTitle:@"注册" forState:0];
+    [_makesureRegistBtn setTitleColor:[UIColor whiteColor] forState:0];
+    [_makesureRegistBtn setBackgroundColor:[UIColor colorWithRed:0 green:0.71 blue:0.54 alpha:1]];
+    _makesureRegistBtn.layer.cornerRadius = 5.0f;
+    _makesureRegistBtn.layer.borderWidth = 1.0f;
+    _makesureRegistBtn.layer.borderColor = [UIColor clearColor].CGColor;
+    [self addSubview:_makesureRegistBtn];
 }
 
 /*
