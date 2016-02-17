@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "LoginView.h"
+#import "iKYLoadView.h"
 
 @interface ViewController ()
 /**
@@ -115,8 +116,20 @@
 - (void)goToRegistUser
 {
     [self.view endEditing:YES];
-    NSLog(@"%@",_loginView.userNameTextView.inputTextField.text);
-    NSLog(@"%@",_loginView.passwordTextView.inputTextField.text);
+    [[iKYLoadView shareLoadView]showLoadingViewWithBlur];
+    [self performSelector:@selector(removeLoadingView) withObject:self afterDelay:1.5f];
+}
+
+- (void)removeLoadingView
+{
+    [[iKYLoadView shareLoadView]dismissLoadingViewWithBlur];
+//    NSLog(@"%@",_loginView.userNameTextView.inputTextField.text);
+//    NSLog(@"%@",_loginView.passwordTextView.inputTextField.text);
+    NSString *str = [NSString stringWithFormat:@"%@ %@",_loginView.userNameTextView.inputTextField.text,_loginView.passwordTextView.inputTextField.text];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:str preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"sure" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

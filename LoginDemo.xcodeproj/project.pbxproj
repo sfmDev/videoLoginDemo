@@ -21,6 +21,7 @@
 		8238550C1C70C25C00434125 /* LoginDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8238550B1C70C25C00434125 /* LoginDemoTests.m */; };
 		823855171C70C25C00434125 /* LoginDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 823855161C70C25C00434125 /* LoginDemoUITests.m */; };
 		823855261C70C3F800434125 /* BridgeLoop-640p.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 823855251C70C3F800434125 /* BridgeLoop-640p.mp4 */; };
+		8238552E1C74B7C500434125 /* iKYLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8238552C1C74B7C500434125 /* iKYLoadView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		823855161C70C25C00434125 /* LoginDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginDemoUITests.m; sourceTree = "<group>"; };
 		823855181C70C25C00434125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823855251C70C3F800434125 /* BridgeLoop-640p.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BridgeLoop-640p.mp4"; sourceTree = "<group>"; };
+		8238552B1C74B7C500434125 /* iKYLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iKYLoadView.h; sourceTree = "<group>"; };
+		8238552C1C74B7C500434125 /* iKYLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iKYLoadView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 		823854F01C70C25C00434125 /* LoginDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8238552D1C74B7C500434125 /* iKYLoadView */,
 				823855241C70C3E500434125 /* Resouce */,
 				823854F41C70C25C00434125 /* AppDelegate.h */,
 				823854F51C70C25C00434125 /* AppDelegate.m */,
@@ -168,6 +172,16 @@
 				823855251C70C3F800434125 /* BridgeLoop-640p.mp4 */,
 			);
 			path = Resouce;
+			sourceTree = "<group>";
+		};
+		8238552D1C74B7C500434125 /* iKYLoadView */ = {
+			isa = PBXGroup;
+			children = (
+				8238552B1C74B7C500434125 /* iKYLoadView.h */,
+				8238552C1C74B7C500434125 /* iKYLoadView.m */,
+			);
+			name = iKYLoadView;
+			path = "../../iKYCircleLoadView-master/iKYCircleLoadingViewDemo/iKYCircleLoadingViewDemo/iKYLoadView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +321,7 @@
 			files = (
 				823854F91C70C25C00434125 /* ViewController.m in Sources */,
 				6197697E1C72B6D700301995 /* ImageAndTextFieldView.m in Sources */,
+				8238552E1C74B7C500434125 /* iKYLoadView.m in Sources */,
 				823854F61C70C25C00434125 /* AppDelegate.m in Sources */,
 				61EC66071C7168320015B1FD /* LoginView.m in Sources */,
 				823854F31C70C25C00434125 /* main.m in Sources */,
