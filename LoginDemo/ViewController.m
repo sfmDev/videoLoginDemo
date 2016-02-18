@@ -74,9 +74,9 @@
  */
 - (void)setTextFieldTransform
 {
-    _loginView.userNameTextView.transform = CGAffineTransformMakeTranslation(-400, 0);
-    _loginView.passwordTextView.transform = CGAffineTransformMakeTranslation(-400, 0);
-    _loginView.makesureRegistBtn.transform = CGAffineTransformMakeTranslation(-400, 0);
+    _loginView.userNameTextView.transform = CGAffineTransformMakeTranslation(400, 0);
+    _loginView.passwordTextView.transform = CGAffineTransformMakeTranslation(400, 0);
+    _loginView.makesureRegistBtn.transform = CGAffineTransformMakeTranslation(400, 0);
 }
 
 /**
@@ -99,18 +99,6 @@
 - (void)registUser
 {
     [self dismissFirstLoginView];
-    
-    //注册出现
-    [UIView animateWithDuration:1.0 animations:^{
-        _loginView.userNameTextView.transform = CGAffineTransformIdentity;
-        _loginView.passwordTextView.transform = CGAffineTransformIdentity;
-        _loginView.makesureRegistBtn.transform = CGAffineTransformIdentity;
-    }];
-    
-    /**
-     *  提交注册信息
-     */
-    [_loginView.makesureRegistBtn addTarget:self action:@selector(goToRegistUser) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)goToRegistUser
@@ -153,6 +141,18 @@
 - (void)loginUser
 {
     [self dismissFirstLoginView];
+    
+    //注册出现
+    [UIView animateWithDuration:1.0 animations:^{
+        _loginView.userNameTextView.transform = CGAffineTransformIdentity;
+        _loginView.passwordTextView.transform = CGAffineTransformIdentity;
+        _loginView.makesureRegistBtn.transform = CGAffineTransformIdentity;
+    }];
+    
+    /**
+     *  提交注册信息
+     */
+    [_loginView.makesureRegistBtn addTarget:self action:@selector(goToRegistUser) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setupForAVplayerView
