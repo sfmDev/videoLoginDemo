@@ -7,7 +7,7 @@
 ![image](https://github.com/sfmDev/videoLoginDemo/blob/master/animation.gif)   
 
 ---
-TO DO:
-1.Swift版本(3.0吧,太懒了 一直说要写的,哎)
-2.pod依赖
-3.更多的转场动画吧
+TO DO:</br>
+1.Swift版本(3.0吧,太懒了 一直说要写的,哎)</br>
+2.pod依赖</br>
+3.更多的转场动画吧</br>
